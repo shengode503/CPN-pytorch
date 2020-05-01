@@ -1,0 +1,66 @@
+CHECKPOINT_PATH: result/checkpoints/
+CHECK_RES_PATH: result/check_result/
+CUDNN:
+  BENCHMARK: True
+  DETERMINISTIC: False
+  ENABLED: True
+DATASET:
+  COLOR_RGB: False
+  DATA_FORMAT: jpg
+  DROP_OOB: False
+  FLIP_PROB: 0
+  IMAGE: ['train2017/', 'val2017/']
+  IS_FLIP: True
+  IS_TRAIN: True
+  MEAN_STD_PATH: mean.pth.tar
+  NAME: coco
+  NJOINTS: 17
+  NUM_JOINTS_HALF_BODY: 8
+  PROB_HALF_BODY: 0.0
+  ROOT: dataset/mscoco/
+  ROT_FACTOR: 45
+  SCALE_FACTOR: 0.3
+  TESTSET: annotations/person_keypoints_val2017.json
+  TRAINSET: annotations/person_keypoints_train2017.json
+DEVICE: 0
+LOGGER:
+  EPOCH_LOG_POTH: result/logs/epoch_logger.txt
+  TRAIN_EVENT_LOG_POTH: result/logs/train_event_logger.txt
+  TRAIN_LOGER: result/logs/train_logger.txt
+  VAL_LOGGER: result/logs/val_logger.txt
+MODEL:
+  EXTRA:
+    CHANNEL_LIST: [2048, 1024, 512, 256]
+    IS_PRETRAIN: True
+    RESNET_TYPE: 50
+  HEATMAP_SIZE: [96, 72]
+  IMAGE_SIZE: [384, 288]
+  NAME: cpn
+  PRETRAIN_RES_ROOT: pretrain_model/pretrain_resnet/
+  SIGMA: 1
+  SIGMA_DECAY: 0
+  TARGET_TYPE: Gaussian
+PIN_MEMORY: True
+PRINT_FREQ: 30
+TEST:
+  FLIP_TEST: True
+  SHIFT_RES: 1
+TRAIN:
+  BEGIN_EPOCH: 0
+  CHECK_RES_FREQ: 3
+  CHECK_RES_PATH: result/check_result/
+  DATA_SHUFFLE: True
+  END_EPOCH: 140
+  FOR_PARALLEL: False
+  IS_DATA_CLEAN: True
+  IS_STRAIGHT: False
+  LR: 0.0005
+  LR_FACTOR: 0.1
+  MOMENTUM: 0
+  OHKM: True
+  OPTIMIZER: adam
+  SCHEDULE: [60, 90]
+  TRAIN_BATCH: 16
+  WEIGHT_DECAY: 0
+  snapshot: 5
+WORKERS: 0

@@ -1,5 +1,5 @@
 A Pytorch implementation of "Cascaded Pyramid Network for Multi-Person Pose Estimation"
-(https://link.springer.com/article/10.1007/s10845-019-01476-x).
+(https://arxiv.org/abs/1711.07319).
 
 Part of code referenced from :
 'https://github.com/GengDavid/pytorch-cpn' &
